@@ -9,7 +9,7 @@ from api.db import get_db
 router = APIRouter()
 
 
-@router.put("/tasks/{task_id}/done", response_model=done_schema.Done)
+@router.put("/tasks/{task_id}/done", response_model=done_schema.DoneResponse)
 async def mark_task_as_done(task_id: int, db: AsyncSession = Depends(get_db)):
     '''
     taskidを受け取り、doneにする
